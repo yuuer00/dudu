@@ -1,0 +1,106 @@
+#logo{
+    cursor: pointer;
+}
+nav .nav {
+    padding-left: 15vw;
+}
+
+nav .nav .dropdown {
+    float: right;
+    margin-right: 15vw;
+}
+
+#logo {
+    line-height: 42px;
+    font-size: 25px;
+    padding-right: 20px;
+}
+
+#modal,
+#signinModal .modal-dialog,
+#addModal,
+#alterModal,
+#alterPasswordModal{
+    margin: 150px auto;
+}
+#signinModal .modal-body small{
+    color: red;
+}
+main{
+    width: 60vw;
+    margin: 20px auto;
+}
+main #register *{
+    width: 30vw;
+    height: 30px;
+    margin: 10px;
+}
+main #register input[type=submit]{
+    background-color: #3f89ec;
+    margin-left: 30px;
+    height: 40px;
+}
+th {
+    background-color: #eee;
+    font-weight: normal;
+}
+th:last-child,
+td:last-child {
+    text-align: center;
+}
+td:last-child span{
+    color: #3f89ec;
+    cursor: pointer;
+}
+#messages h1{
+    display: inline-block;
+}
+#messages .btn-default{
+    background-color: orange;
+    float: right;
+    margin-top: 25px;
+}
+main #writeLog input[type=submit]{
+    background-color: #3f89ec;
+    width: 100%;
+    margin-top: 20px;
+    height: 40px;
+}
+#home h2{
+    display: inline-block;
+}
+#home .btn{
+    background-color: orange;
+    float: right;
+    margin-top: 15px;
+}
+#home small{
+    display: block;
+    margin-top:  10px;
+    color: #7f7f7f;
+}
+#home h4{
+    color: #000000;
+    margin-top: 20px;
+}
+#home hr{
+    border: none;
+    height: 1px;
+    background-color:  orange;
+}
+#home footer{
+    text-align: center;
+}
+#prevPage,
+#nextPage,
+#currPage span{
+    margin-right: 10px;
+    cursor: pointer;
+    color: blueviolet;
+}
+#currPage input{
+    width: 35px;
+}
+.point{
+    cursor: pointer;
+}

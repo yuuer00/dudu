@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="author" content="刘帅鹏">
+    <title>xiao公司工作日志系统 - 注册</title>
+    <link href="/libs/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/libs/all.css" rel="stylesheet">
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <nav>
+        <ul class="nav nav-tabs" role="tablist">
+            <li id='logo' onclick="location.href='/'">注册xiao公司内部账号</li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="modal" data-target='#signinModal'>登陆 </a>
+            </li>
+        </ul>
+    </nav>
+    <main>
+        <form action="" id="register">
+            姓名： <input type="text" name="name" placeholder="请输入姓名"><br>
+            密码： <input type="password" name="password" placeholder="请输入密码"><br>
+            手机： <input type="text" name="phone" placeholder="请输入手机号"><br>
+            部门： <select name="section" id="">
+                <option value="前端组">前端组</option>
+                <option value="客户端组">客户端组</option>
+                <option value="服务端组">服务端组</option>
+                <option value="业务部">业务部</option>
+                <option value="人事部">人事部</option>
+                <option value="财务部">财务部</option>
+                <option value="老板">老板</option>
+            </select><br>
+            <input type="submit" value="注册">
+        </form>
+    </main>
+    <div class="modal fade" id="signinModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title">登录 xiao公司内部账号</h4>
+                </div>
+                <div class="modal-body">
+                    <!--以下是表单-->
+                    <form id="signin" class="form-horizontal">
+                        <div class="form-group">
+                            <small></small>
+                            <label for="inputEmail3" class="col-sm-2 control-label">账号</label>
+                            <div class="col-sm-5">
+                                <input type="email" name="name" class="form-control" id="inputEmail3" placeholder="请输入账号">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="inputPassword3" class="col-sm-2 control-label">密码</label>
+                            <div class="col-sm-5">
+                                <input type="password" name="password" class="form-control" id="inputPassword3" placeholder="请输入密码">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                    <button type="button" class="btn btn-primary">登录</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--弹出框-->
+    <div class="modal fade" tabindex="-1" role="dialog" id="modal">
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal"><span>&times;</span></button>
+                        <h4 class="modal-title">xiao公司</h4>
+                    </div>
+                    <div class="modal-body"></div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">确定</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="/libs/js/jquery.js"></script>
+    <script src="/libs/js/bootstrap.min.js"></script>
+    <script src="/js/register.js"></script>
+</body>
+
+</html>

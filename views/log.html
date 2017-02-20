@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="author" content="刘帅鹏">
+    <title>xiao公司工作日志系统 - 首页</title>
+    <link href="/libs/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/libs/all.css" rel="stylesheet">
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <nav>
+        <ul class="nav nav-tabs" role="tablist">
+            <li id='logo' onclick="location.href='/'"> xiao公司工作日志系统</li>
+            <li class="dropdown">
+                {{if name}}
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-target=''>{{name}} <span class="caret"></span></a>                {{else}}
+                <a href="#" class="dropdown-toggle" data-toggle="modal" data-target='#signinModal'>登陆 </a> {{/if}}
+                <ul class="dropdown-menu" role="menu">
+                    <li><a href="#" data-toggle="modal" data-target='#alterPasswordModal'>修改密码</a></li>
+                    <li class="divider"></li>
+                    <li><a href="/xiao/user/sigout">退出</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+    <div class="tab-content">
+        <div role="tabpanel" class="tab-pane active" id="home">
+            <main>
+                <h2>{{logs[0].name}}的日志</h2>
+                {{each logs as log i}}
+                <h4>{{log.date | formatDate}}</h4>
+                <h4>上午</h4>
+                <div>{{log.forenoon}}</div>
+                <h4>下午</h4>
+                <div>{{log.afternoon}}</div>
+                <h4>晚上</h4>
+                <div>{{log.night}}</div>
+                <small>{{log.name}} &#x3000; {{log.time | formatTime}} &#x3000; {{log.ip}} &#x3000; 提交</small>
+                <hr> {{/each}}
+            </main>
+            <footer>
+                <span id="prevPage" onclick="playPage('prev','{{page}}')">上一页</span>
+                <span id="currPage">第{{page}}页<input type="text" name="page" placeholder="页码"><span onclick="playPage('curr')">go</span></span>
+                <span id="nextPage" onclick="playPage('next','{{page}}')">下一页</span>
+            </footer>
+        </div>
+    </div>
+    <!--修改密码模态框-->
+    <div class="modal fade" id="alterPasswordModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title">修改 {{name}} 账号密码</h4>
+                </div>
+                <div class="modal-body">
+                    <!--以下是表单-->
+                    <form id="signin" class="form-horizontal">
+                        <div class="form-group">
+                            <label for="inputPassword2" class="col-sm-2 control-label">当前密码</label>
+                            <div class="col-sm-5">
+                                <input type="password" name="password1" class="form-control" id="inputPassword2" placeholder="请输入当前密码">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="inputPassword3" class="col-sm-2 control-label">新密码</label>
+                            <div class="col-sm-5">
+                                <input type="password" name="password2" class="form-control" id="inputPassword3" placeholder="请输入新密码">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">取消修改</button>
+                    <button type="button" class="btn btn-primary">确定修改</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--弹出模态框-->
+    <div class="modal fade" tabindex="-1" role="dialog" id="modal">
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal"><span>&times;</span></button>
+                        <h4 class="modal-title">xiao公司</h4>
+                    </div>
+                    <div class="modal-body"></div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                        <button type="button" class="btn btn-default" data-dismiss="modal">确定</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="/libs/js/jquery.js"></script>
+    <script src="/libs/js/bootstrap.min.js"></script>
+    <script src="/js/index.js"></script>
+</body>
+
+</html>
